@@ -13,7 +13,7 @@ def create_organization_and_admin(
 ):
     
     db_filename = f"{org_name.lower().replace(' ', '_').replace('.', '')}.db"
-    dynamic_db_path = os.path.join(os.getcwd(), db_filename) # Get absolute path
+    dynamic_db_path = os.path.join(os.getcwd(), db_filename)
     dynamic_db_connection_string = f"sqlite:///{dynamic_db_path}"
 
     db_org = OrganizationMaster(

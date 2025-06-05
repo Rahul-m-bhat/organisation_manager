@@ -28,7 +28,7 @@ def admin_login(
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    # Get the dynamic DB session for this organization
+    # Getting the dynamic DB session for this organization
     org_db_session_generator = get_organization_db_session(organization_master.db_connection_string)
     try:
         org_db: Session = next(org_db_session_generator)
@@ -56,7 +56,7 @@ def admin_login(
         )
         return {"access_token": access_token, "token_type": "bearer"}
     finally:
-        org_db.close() # Ensure the session is closed
+        org_db.close()
 
 
 

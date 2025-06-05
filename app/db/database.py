@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 from typing import Generator
-from app.db.master_db_models import MasterSessionLocal # Import MasterSessionLocal
+from app.db.master_db_models import MasterSessionLocal
 
 
 def get_organization_db_session(db_connection_string: str) -> Generator[Session, None, None]:
@@ -14,8 +14,9 @@ def get_organization_db_session(db_connection_string: str) -> Generator[Session,
     finally:
         db.close()
 
-# Dependency for master database
+
 def get_master_db() -> Generator[Session, None, None]:
+    """This function will return master Database session"""
     db = MasterSessionLocal()
     try:
         yield db

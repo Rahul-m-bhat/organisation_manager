@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from app.schemas.organization import OrganizationCreate, OrganizationGet, OrganizationResponse
 from app.crud import organization as crud_org
 from app.db.database import get_master_db
-# from app.db.master_db_models import OrganizationMaster
+
 
 router = APIRouter()
 
